@@ -1,3 +1,6 @@
+<?php
+    include 'config.php';
+?>
 <html>
 <body>
 <style>
@@ -26,8 +29,7 @@ if(isset($_POST['top'])) {
 			while (file_exists("templates/" . $name)) {
 				$name = md5($name) . '.' . $upload_exts;
 			}
-			
-			$db = new mysqli('localhost', 'xxxxx', 'xxxxx', 'xxxxxx');
+
 			if(trim(strip_tags($db->real_escape_string($_POST['top']))) == "") die;
 			$naam = trim(strip_tags($db->real_escape_string($_POST['top'])));
 			$db->query("INSERT INTO persons (naam) VALUES ('$naam');");

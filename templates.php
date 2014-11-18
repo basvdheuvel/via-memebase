@@ -1,3 +1,6 @@
+<?php
+    include 'config.php';
+?>
 <html>
 <head>
 	<title>Memebase templates</title>
@@ -5,7 +8,6 @@
 
 <body>
 	<?php
-	$db = new mysqli('localhost', 'xxxxx', 'xxxxx', 'xxxxx');
 	$res = $db->query("SELECT * FROM templates");
 	while($row = $res->fetch_assoc()) {
 		if($row['skip'] == 1) continue;

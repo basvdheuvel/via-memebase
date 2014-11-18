@@ -1,3 +1,6 @@
+<?php
+    include 'config.php';
+?>
 <!DOCTYPE html>
 
 <html>
@@ -6,9 +9,8 @@
   <title>Bekijk alle memes van een persoon</title>
  </head>
  <body>
- 	<?php 
+ 	<?php
 	if(!isset($_GET['id'])) die;
-	$db = new mysqli('localhost', 'xxxx', 'xxxx', 'xxx');
 	$id = $db->real_escape_string($_GET['id']);
 	$res = $db->query("SELECT * FROM memes WHERE template=$id ORDER BY id DESC");
 	$row_cnt = $res->num_rows;

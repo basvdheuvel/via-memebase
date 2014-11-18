@@ -1,11 +1,11 @@
 <?php
+include 'config.php';
 header('Content-Type: image/png');
 
 if(!isset($_GET['id'])) die;
 
 $max_size = 50;
 
-$db = new mysqli('localhost', 'xxxxx', 'xxxxx', 'xxxxx');
 $id = $db->real_escape_string($_GET['id']);
 $res = $db->query("SELECT * FROM memes WHERE id=$id");
 if($res->num_rows == 0) die;
@@ -24,7 +24,7 @@ if($ext == "jpg" || $ext == "jpeg") {
 }
 else if($ext == "png") {
 	$img = imagecreatefrompng("templates/$url");
-} 
+}
 else {
 	die;
 }

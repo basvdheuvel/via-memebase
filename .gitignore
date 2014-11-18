@@ -1,2 +1,5 @@
 # swap files
 *.swp
+
+# Don't add the config. Only add config_template.php
+config.php

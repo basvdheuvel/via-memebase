@@ -1,3 +1,6 @@
+<?php
+    include 'config.php';
+?>
 <html>
 <head>
 	<title>Memebase</title>
@@ -5,9 +8,8 @@
 </head>
 
 <body>
-	<?php 
+	<?php
 		if(isset($_POST['template'])) {
-			$db = new mysqli('localhost', 'xxxxx', 'xxxxx', 'xxxxxx');
 			$tem = trim($db->real_escape_string($_POST['template']));
 			$t = trim($db->real_escape_string($_POST['top']));
 			$b = trim($db->real_escape_string($_POST['bottom']));
