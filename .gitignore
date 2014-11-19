@@ -5,4 +5,5 @@
 config.php
 
 # Don't add the templates to git
+templates/*
 templates/
