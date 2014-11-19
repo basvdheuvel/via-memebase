@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>Memebase</title>
-	<link href="memebase.css" type="text/css" rel="stylesheet"  />
+	<link href="style.css" type="text/css" rel="stylesheet"  />
 </head>
 
 <body>
@@ -40,7 +40,6 @@
 		<label>Template:</label>
 		<select name="template">
 		<?php
-		$db = new mysqli('localhost', 'xxxx', 'xxxx', 'xxxxx');
 		$res = $db->query("SELECT * FROM templates");
 		$ids = array();
 		$names = array();

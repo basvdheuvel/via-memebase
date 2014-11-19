@@ -2,13 +2,13 @@
 include 'config.php';
 header('Content-Type: image/png');
 
-if(!isset($_GET['id'])) die;
+if(!isset($_GET['id'])) die('no id given');
 
 $max_size = 50;
 
 $id = $db->real_escape_string($_GET['id']);
 $res = $db->query("SELECT * FROM memes WHERE id=$id");
-if($res->num_rows == 0) die;
+if($res->num_rows == 0) die('invalid id');
 $row = $res->fetch_assoc();
 $template = $row['template'];
 $tmp = $db->query("SELECT url FROM templates WHERE id=$template")->fetch_assoc();
@@ -26,7 +26,7 @@ else if($ext == "png") {
 	$img = imagecreatefrompng("templates/$url");
 }
 else {
-	die;
+	die('wrong extension');
 }
 
 $w = imagesx($img);

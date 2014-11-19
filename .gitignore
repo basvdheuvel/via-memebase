@@ -3,3 +3,6 @@
 
 # Don't add the config. Only add config_template.php
 config.php
+
+# Don't add the templates to git
+templates/
