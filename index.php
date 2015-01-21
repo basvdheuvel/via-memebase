@@ -1,5 +1,8 @@
 <?php
     include 'config.php';
+
+    $tmp = $db->query("SELECT id FROM memes ORDER BY id DESC")->fetch_assoc();
+    $latest_id = $tmp['id'];
 ?>
 <html>
 <head>
@@ -89,6 +92,7 @@
 	<br />
 	<br />
 	<a href="template.php">Voeg een template toe</a><br />
-	<a href="templates.php">Bekijk alle templates</a>
+    <a href="templates.php">Bekijk alle templates</a><br />
+    <a href="meme.php?id=<?php echo $latest_id; ?>">Bekijk de laatste meme</a><br />
 </body>
 </html>
